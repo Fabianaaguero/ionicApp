@@ -3,7 +3,6 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    
   </ion-toolbar>
 </ion-header>
 
@@ -17,19 +16,43 @@
     <form action="">
       <ion-item>
         <ion-label position="floating">Email</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="email" name="email" [(ngModel)]="registCampos.email"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" name="password" [(ngModel)]="registCampos.password"></ion-input>
       </ion-item>
     </form>
     <br>
-    <ion-button>Registrarse</ion-button>
+    <ion-button (click)="registro()">Registrarse</ion-button>
+  </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-title>Login</ion-title>
+    </ion-card-header>
+    <ion-card-content>
+    <form action="">
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" name="email" [(ngModel)]="loginCampos.email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" name="password" [(ngModel)]="loginCampos.password"></ion-input>
+      </ion-item>
+    </form>
+    <br>
+    <ion-button (click)="ingreso()">Ingresar</ion-button>
   </ion-card-content>
   </ion-card>
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar color="primary"></ion-toolbar>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="end">
+        <ion-button [routerLink]="['/']">Login</ion-button>
+      </ion-buttons>
+  </ion-toolbar>
 </ion-footer>
